@@ -2,3 +2,8 @@
 <p>Hello from index!</p>
 
 <%= link_to('Hello with parameters', {:action => 'hello', :page => 5, :id => 3}) %>
+
+<br>
+<%= link_to('Roar', '#', onclick: "jsRoar('JavaScript'); return true;") %>
+
+<%= javascript_tag("jsRoar('Rails');") %>

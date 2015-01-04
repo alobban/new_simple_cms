@@ -1,10 +1,11 @@
-<% @page_title = "Admin Users" %>
+<% @page_title = "Admin Users List" %>
+
+<%= link_to("<< Back to Menu", {controller: 'access'}, class: 'back-link') %>
 
 <div class="users index">
   <h2>Users</h2>
 
   <%= link_to("Add New User", {action: 'new'}, class: 'action new') %>
-  <%= link_to("Menu", {controller: 'access'}, class: 'action new') %>
 
   <table class="listing" summary="User list">
   	<tr class="header">

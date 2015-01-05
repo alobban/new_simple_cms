@@ -44,7 +44,7 @@ class SectionsController < ApplicationController
       flash[:notice] = "Section has been updated successfully."
       redirect_to(action: 'show', id: @section.id, page_id: @page.id)
     else
-      @page.subject.pages.sorted
+      @pages = @page.subject.pages.sorted
       @section_count = Section.count
       render('edit')
     end

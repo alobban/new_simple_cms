@@ -6,6 +6,8 @@ class Section < ActiveRecord::Base
 
   acts_as_list scope: :page
 
+  after_save :touch_page
+
   CONTENT_TYPES = ['text', 'HTML']
 
   # validates_presence_of :name
@@ -25,5 +27,13 @@ class Section < ActiveRecord::Base
   scope :search, lambda { |query|
   	where(["name LIKE ?", "%#{query}%"])
   }
+
+  private
+
+    def touch_page
+      # touch is similar to:
+      # subject.update_attribute(updated_at, Time.now)
+      page.touch      
+    end
 
 end
